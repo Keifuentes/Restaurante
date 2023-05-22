@@ -1,6 +1,6 @@
 ﻿namespace Restaurante
 {
-    partial class Form1
+    partial class InicioSesion
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -32,6 +32,9 @@
             this.TxtContrasena = new System.Windows.Forms.TextBox();
             this.btnInicio = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtUsuario
@@ -43,7 +46,7 @@
             // 
             // TxtContrasena
             // 
-            this.TxtContrasena.Location = new System.Drawing.Point(199, 243);
+            this.TxtContrasena.Location = new System.Drawing.Point(199, 217);
             this.TxtContrasena.Name = "TxtContrasena";
             this.TxtContrasena.PasswordChar = '*';
             this.TxtContrasena.Size = new System.Drawing.Size(100, 20);
@@ -69,17 +72,50 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // Form1
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(175, 43);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(151, 23);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Inicio de Sesion";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(222, 120);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 20);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Usuario";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(213, 194);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(76, 20);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Contraseña";
+            // 
+            // InicioSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(496, 376);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnInicio);
             this.Controls.Add(this.TxtContrasena);
             this.Controls.Add(this.txtUsuario);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "InicioSesion";
+            this.Text = "Inicio De Sesion";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -91,6 +127,9 @@
         private System.Windows.Forms.TextBox TxtContrasena;
         private System.Windows.Forms.Button btnInicio;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
 

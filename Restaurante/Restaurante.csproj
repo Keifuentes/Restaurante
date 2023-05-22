@@ -12,6 +12,9 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -22,13 +25,11 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationRevision>1</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>x64</PlatformTarget>
@@ -48,6 +49,18 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>9AC1C37FEEA5EEB5F8E005F27CD1956682B98F78</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Restaurante_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
@@ -141,11 +154,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MenuAdmin.cs">
+    <Compile Include="Admin\CrearUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuAdmin.Designer.cs">
-      <DependentUpon>MenuAdmin.cs</DependentUpon>
+    <Compile Include="Admin\CrearUsuario.Designer.cs">
+      <DependentUpon>CrearUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\IngresarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\IngresarEmpleado.Designer.cs">
+      <DependentUpon>IngresarEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bodeguero\SolicitarInsumos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bodeguero\SolicitarInsumos.Designer.cs">
+      <DependentUpon>SolicitarInsumos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bodeguero\VerStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bodeguero\VerStock.Designer.cs">
+      <DependentUpon>VerStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Recepcion\Orden.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recepcion\Orden.Designer.cs">
+      <DependentUpon>Orden.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Recepcion\IngresoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recepcion\IngresoCliente.Designer.cs">
+      <DependentUpon>IngresoCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="InicioSesion.cs">
       <SubType>Form</SubType>
@@ -153,10 +196,67 @@
     <Compile Include="InicioSesion.Designer.cs">
       <DependentUpon>InicioSesion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin\MenuAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\MenuAdmin.Designer.cs">
+      <DependentUpon>MenuAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bodeguero\Inventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bodeguero\Inventario.Designer.cs">
+      <DependentUpon>Inventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bodeguero\MenuBodeguero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bodeguero\MenuBodeguero.Designer.cs">
+      <DependentUpon>MenuBodeguero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cocina\MenuCocina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cocina\MenuCocina.Designer.cs">
+      <DependentUpon>MenuCocina.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finanza\MenuFinanza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finanza\MenuFinanza.Designer.cs">
+      <DependentUpon>MenuFinanza.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Recepcion\MenuRecepcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recepcion\MenuRecepcion.Designer.cs">
+      <DependentUpon>MenuRecepcion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Admin\CrearUsuario.resx">
+      <DependentUpon>CrearUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\IngresarEmpleado.resx">
+      <DependentUpon>IngresarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bodeguero\SolicitarInsumos.resx">
+      <DependentUpon>SolicitarInsumos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bodeguero\VerStock.resx">
+      <DependentUpon>VerStock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InicioSesion.resx">
       <DependentUpon>InicioSesion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\MenuAdmin.resx">
+      <DependentUpon>MenuAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bodeguero\Inventario.resx">
+      <DependentUpon>Inventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bodeguero\MenuBodeguero.resx">
+      <DependentUpon>MenuBodeguero.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -167,6 +267,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Recepcion\IngresoCliente.resx">
+      <DependentUpon>IngresoCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recepcion\MenuRecepcion.resx">
+      <DependentUpon>MenuRecepcion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recepcion\Orden.resx">
+      <DependentUpon>Orden.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -183,6 +292,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Restaurante_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

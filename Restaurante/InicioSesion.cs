@@ -13,9 +13,9 @@ using Oracle.DataAccess.Client;
 
 namespace Restaurante
 {
-    public partial class Form1 : Form
+    public partial class InicioSesion : Form
     {
-        public Form1()
+        public InicioSesion()
         {
             InitializeComponent();
         }
@@ -41,31 +41,47 @@ namespace Restaurante
                 conexion.Open();
             }
 
-            OracleCommand comando = new OracleCommand("select * from usuarios where nombre_usuario = :nombre_usuario and contrasena = :contrasena", conexion);
+            OracleCommand comando = new OracleCommand("SELECT * FROM usuario WHERE NOMBRE_USUARIO = :NOMBRE_USUARIO AND CONTRASENA = :CONTRASENA", conexion);
 
-            comando.Parameters.Add(":usuario", txtUsuario.Text);
+            comando.Parameters.Add("nombre_usuario", txtUsuario.Text);
             comando.Parameters.Add("contrasena", TxtContrasena.Text);
 
             OracleDataReader lector = comando.ExecuteReader();
 
-
             if (lector.Read())
             {
-                string rol = lector.GetString(2); 
+                string rol = lector.GetString(3);
 
-                if (rol == "admin")
+                switch (rol)
                 {
-                    
-                    MenuAdmin menuAdmin = new MenuAdmin();
-                    menuAdmin.Show();
-                    this.Hide(); 
-                }
-                else
-                {
-
-                    InicioSesion inicioSesion = new InicioSesion();
-                    inicioSesion.Show();
-                    this.Hide(); 
+                    case "admin":
+                        MenuAdmin menuAdmin = new MenuAdmin();
+                        menuAdmin.Show();
+                        this.Hide();
+                        break;
+                    case "recepcion":
+                        MenuRecepcion menuRecepcion = new MenuRecepcion();
+                        menuRecepcion.Show();
+                        this.Hide();
+                        break;
+                    case "cocina":
+                        MenuCocina menuCocina = new MenuCocina();
+                        menuCocina.Show();
+                        this.Hide();
+                        break;
+                    case "finanza":
+                        MenuFinanza menuFinanza = new MenuFinanza();
+                        menuFinanza.Show();
+                        this.Hide();
+                        break;
+                    case "bodeguero":
+                        MenuBodeguero menuBodeguero = new MenuBodeguero();
+                        menuBodeguero.Show();
+                        this.Hide();
+                        break;
+                    default:
+                        MessageBox.Show("Usuario o contraseña incorrectos");
+                        break;
                 }
             }
             else
@@ -80,5 +96,8 @@ namespace Restaurante
         {
            
         }
+
+        
     }
+
 }
